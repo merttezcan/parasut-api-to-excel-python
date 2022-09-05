@@ -11,6 +11,8 @@ client_secret = os.getenv('client_secret')
 user = os.getenv('user')
 password = os.getenv('password')
 
+company_id = os.getenv('company_id')
+
 invoice_id = input("Fatura ID: ")
 
 access_point = 'https://api.parasut.com/oauth/token'
@@ -37,7 +39,7 @@ def parasut_token():
         if 'access_token' in resp:
             my_token = resp['access_token']
             #print(my_token)
-            url = "https://api.parasut.com/v4/519727/sales_invoices/" + invoice_id + "?include=contact,details.product"
+            url = "https://api.parasut.com/v4/" + company_id + "/sales_invoices/" + invoice_id + "?include=contact,details.product"
             payload={}
             headers = {
             'Authorization': 'Bearer ' + my_token
