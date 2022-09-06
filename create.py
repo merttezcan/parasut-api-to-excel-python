@@ -31,7 +31,7 @@ df_out.drop(df_out.columns[[3,6]], axis=1, inplace=True)
 
 import numpy as np
 
-df_out['LİTRE'] = np.where(df_out['ÜRÜN ADI'].str.contains('4L', regex= True), 4, 1)
+df_out['LİTRE'] = np.where(df_out['ÜRÜN ADI'].str.contains('4L', regex= True), 4, 12)
 
 df_out['ADET'] = df_out['ADET'].astype(float)
 
